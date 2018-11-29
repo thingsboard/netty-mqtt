@@ -27,6 +27,8 @@ public final class MqttClientConfig {
     private boolean reconnect = true;
     private long retryInterval = 1L;
 
+    private int maxBytesInMessage = 8092;
+
     public MqttClientConfig() {
         this(null);
     }
@@ -140,4 +142,8 @@ public final class MqttClientConfig {
     public void setRetryInterval(long retryInterval) {
         this.retryInterval = retryInterval;
     }
+
+    public int getMaxBytesInMessage() { return maxBytesInMessage; }
+
+    public void setMaxBytesInMessage(int maxBytesInMessage) { this.maxBytesInMessage = maxBytesInMessage; }
 }
