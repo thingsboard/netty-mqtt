@@ -159,6 +159,15 @@ public interface MqttClient {
 
 
     /**
+     * Construct the MqttClientImpl with default config.
+     *
+     * @param defaultHandler The default handler for incoming messages that do not match any topic subscriptions
+     */
+    static MqttClient create(MqttHandler defaultHandler){
+        return new MqttClientImpl(defaultHandler);
+    }
+
+    /**
      * Construct the MqttClientImpl with additional config.
      * This config can also be changed using the {@link #getClientConfig()} function
      *
